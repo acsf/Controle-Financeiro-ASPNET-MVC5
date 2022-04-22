@@ -4,6 +4,18 @@
             <li>@Html.ActionLink("Home", "Index", "Home")</li>
             <li>@Html.ActionLink("Usuários", "Index", "Usuario")</li>
             <li>@Html.ActionLink("Movimentações", "Index", "Movimentacao")</li>
+
+            @*@if (WebSecurity.IsAuthenticated)*@
+            @if (User.Identity.IsAuthenticated)
+            {
+                <li>@Html.ActionLink("Logout", "Logout", "Login");</li>
+
+            }
+            else
+            {
+                <li>@Html.ActionLink("Login", "Index", "Login");</li>
+
+            }
         </ul>
     </div>
 </nav>

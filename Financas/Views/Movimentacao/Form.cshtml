@@ -1,9 +1,4 @@
-﻿
-@{
-    ViewBag.Title = "Form";
-}
-
-@model Financas.Entities.Movimentacao
+﻿@model Financas.Entities.Movimentacao
 
 @using (Html.BeginForm("Adiciona", "Movimentacao", FormMethod.Post))
 {
@@ -25,5 +20,6 @@
     @Html.TextBoxFor(m => m.Data, new { @class = "form-control" })
     @Html.ValidationMessageFor(m => m.Data)
 
+    <br />
     <input type="submit" value="Cadastrar" />
 }

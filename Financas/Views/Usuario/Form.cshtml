@@ -1,18 +1,25 @@
-﻿@{
-    ViewBag.Title = "Form";
-}
-
-@model Financas.Entities.Usuario
+﻿@model Financas.Models.UsuarioModel
 
 @using (Html.BeginForm("Adiciona", "Usuario", FormMethod.Post))
 {
-    @Html.LabelFor(u => u.Nome, "Nome")
+    @Html.ValidationMessage("usuario.Invalido")
+
+    @Html.LabelFor(u => u.Nome, "Nome:")
     @Html.TextBoxFor(u => u.Nome, new { @class = "form-control" })
     @Html.ValidationMessageFor(u => u.Nome)
 
-    @Html.LabelFor(u => u.Email, "E-mail")
+    @Html.LabelFor(u => u.Email, "E-mail:")
     @Html.TextBoxFor(u => u.Email, new { @class = "form-control" })
     @Html.ValidationMessageFor(u => u.Email)
 
+    @Html.LabelFor(u => u.Senha, "Senha:")
+    @Html.PasswordFor(u => u.Senha, new { @class = "form-control" })
+    @Html.ValidationMessageFor(u => u.Senha)
+
+    @Html.LabelFor(u => u.ConfirmarSenha, "Confirme a senha:")
+    @Html.PasswordFor(u => u.ConfirmarSenha, new { @class = "form-control" })
+    @Html.ValidationMessageFor(u => u.ConfirmarSenha)
+
+    <br />
     <input type="submit" value="Cadastrar" />
 }

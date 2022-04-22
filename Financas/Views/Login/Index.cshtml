@@ -1,0 +1,14 @@
+﻿<form action="@Url.Action("Login")" method="post">
+    @Html.ValidationMessage("login.Invalido")
+
+    <label for="login">Login:</label>
+    <input id="login" type="text" name="login" class="form-control"/>
+
+    <label for="senha">Senha:</label>
+    <input id="senha" type="password" name="senha" class="form-control"/>
+
+    <br />
+    <input type="submit" value="Login"/>
+
+</form>
+

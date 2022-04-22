@@ -8,12 +8,13 @@ using System.Web.Mvc;
 
 namespace Financas.Controllers
 {
+    [Authorize]
     public class MovimentacaoController : Controller
-    {        
+    {
         private MovimentacaoDAO movimentacaoDAO;
         private UsuarioDAO usuarioDAO;
 
-        public MovimentacaoController(MovimentacaoDAO movimentacaoCtor,UsuarioDAO usuarioCtor)
+        public MovimentacaoController(MovimentacaoDAO movimentacaoCtor, UsuarioDAO usuarioCtor)
         {
             this.movimentacaoDAO = movimentacaoCtor;
             this.usuarioDAO = usuarioCtor;
