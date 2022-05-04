@@ -8,13 +8,11 @@
             @*@if (WebSecurity.IsAuthenticated)*@
             @if (User.Identity.IsAuthenticated)
             {
-                <li>@Html.ActionLink("Logout", "Logout", "Login");</li>
-
+                <li>@Html.ActionLink("Logout", "Logout", "Login")</li>
             }
             else
             {
-                <li>@Html.ActionLink("Login", "Index", "Login");</li>
-
+                <li>@Html.ActionLink("Login", "Index", "Login")</li>
             }
         </ul>
     </div>
